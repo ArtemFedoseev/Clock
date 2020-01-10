@@ -1,5 +1,6 @@
 import React from 'react';
 import RenderTime from "./RenderTime";
+import RenderButton from "./RenderButton"
 import './App.css';
 
 class Clock extends React.Component {
@@ -59,18 +60,8 @@ class Clock extends React.Component {
                         <div className="time-output">{this.formTime(timeNow)}</div>
                             <div className="format">
                                 <h2 className="format-title">Format:</h2>
-                                <div className="radio">
-                                    <label>
-                                        <input type="radio" checked={this.state.format === 24} onClick={_ => this.handleClick(24)} />
-                                        <span className="time-format" onClick={_ => this.handleClick(24)}> 24 </span>
-                                    </label>
-                                </div>
-                                <div className="radio">
-                                    <label>
-                                        <input type="radio"  checked={this.state.format === 12} onClick={_ => this.handleClick(12)} />
-                                        <span className="time-format" onClick={_ => this.handleClick(12)}> 12 </span>
-                                    </label>
-                                </div>
+                                <RenderButton format={format} value="24" handleClick={_ => this.handleClick(24)}/>
+                                <RenderButton format={format} value="12" handleClick={_ => this.handleClick(12)}/>
                             </div>
                     </div>
                     
